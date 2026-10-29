@@ -15,11 +15,23 @@ const STATUS: Record<string, string> = {
 };
 
 export function SeverityBadge({ value }: { value: Severity }) {
-  return <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${SEV[value]}`}>{value}</span>;
+  return (
+    <span className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold ${SEV[value]}`}>
+      {value}
+    </span>
+  );
 }
 
 export function StatusBadge({ value }: { value: string }) {
-  return <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS[value] ?? "bg-slate-200 text-slate-700"}`}>{value}</span>;
+  return (
+    <span
+      className={`whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium ${
+        STATUS[value] ?? "bg-slate-200 text-slate-700"
+      }`}
+    >
+      {value}
+    </span>
+  );
 }
 
 export function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {

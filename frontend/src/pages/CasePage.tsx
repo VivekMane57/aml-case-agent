@@ -248,7 +248,7 @@ export default function CasePage() {
               <div className="rounded-lg border border-slate-200 p-3">
                 <div className="flex justify-between text-sm font-semibold"><span>Model score</span><span className="font-mono">{c.score.toFixed(4)}</span></div>
                 <Bar value={c.score} />
-                <p className="mt-2 text-xs text-slate-500">Highest score in the case, at the {Math.round(c.percentile * 100)}th percentile of alerted cases.</p>
+                <p className="mt-2 text-xs text-slate-500">Highest rank score in the case (a within-batch percentile rank, not a probability), at the {Math.round(c.percentile * 100)}th percentile of alerted cases.</p>
               </div>
             </div>
             <h3 className="mt-5 text-sm font-bold">Rule hits</h3>

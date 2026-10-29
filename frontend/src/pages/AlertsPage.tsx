@@ -100,10 +100,10 @@ export default function AlertsPage() {
             <tbody>
               {rows.slice(0, shown).map((a) => (
                 <tr key={a.alertId} className="border-t border-slate-100">
-                  <td className="px-4 py-3 font-mono font-semibold">{a.alertId}</td>
-                  <td className="px-4 py-3 text-slate-600">ACC-{a.account}</td>
-                  <td className="max-w-[280px] px-4 py-3">{a.pattern}</td>
-                  <td className="px-4 py-3 text-slate-600">{a.rulesFired.length} of 3 rules</td>
+                  <td className="whitespace-nowrap px-4 py-3 font-mono font-semibold">{a.alertId}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-slate-600">ACC-{a.account}</td>
+                  <td className="min-w-[260px] max-w-[340px] px-4 py-3 text-[13px] leading-snug">{a.pattern}</td>
+                  <td className="whitespace-nowrap px-4 py-3 text-slate-600">{a.rulesFired.length} of 3 rules</td>
                   <td className="px-4 py-3 text-slate-600">{a.numTransactions}</td>
                   <td className="px-4 py-3 font-mono text-slate-600">{a.score.toFixed(4)}</td>
                   <td className="px-4 py-3 text-slate-600">{pct(a.percentile)}</td>

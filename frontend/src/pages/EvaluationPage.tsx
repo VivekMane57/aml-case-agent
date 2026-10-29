@@ -39,6 +39,16 @@ export default function EvaluationPage() {
         same scores, so rule leakage is not the cause.
       </div>
 
+      <Card className="mt-6">
+        <h2 className="text-lg font-bold">How the alert score is built</h2>
+        <p className="mt-2 text-sm text-slate-700">
+          The score is fixed in advance, not tuned. XGBoost is the main scorer. When both accounts of a transaction
+          were seen in the training period, the score is 50% XGBoost rank plus 50% graph model rank. Otherwise it is
+          the XGBoost rank alone. Ranks are computed within each split, so the score orders alerts in a batch; it is
+          not a calibrated probability.
+        </p>
+      </Card>
+
       <Card className="mt-6 !p-0 overflow-hidden">
         <h2 className="px-6 pt-6 text-lg font-bold">Detection layers</h2>
         <table className="mt-4 w-full text-left text-sm">
