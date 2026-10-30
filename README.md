@@ -4,9 +4,12 @@ An end-to-end anti-money-laundering prototype: detect suspicious transactions th
 
 > **Demo video (2 min):** [FILL: YouTube unlisted link] &nbsp;|&nbsp; **Live demo:** [FILL: Vercel link]
 
-![Alerts](![alt text](image.png))
-![Case](![alt text](<localhost_5173_case_AL-0071 (1).png>))
-![Evaluation](![alt text](localhost_5173_evaluation.png))
+![Alerts](<img width="1602" height="1078" alt="image" src="https://github.com/user-attachments/assets/ef59ad6b-c3a3-4642-9a99-59f8adf35969" />
+)
+![Case](<img width="1290" height="1901" alt="localhost_5173_case_AL-0071 (1)" src="https://github.com/user-attachments/assets/b37362ae-44e4-4ba5-a606-e8a4b4e737e5" />
+)
+![Evaluation](<img width="1290" height="1855" alt="localhost_5173_evaluation" src="https://github.com/user-attachments/assets/ae99b878-a8ae-4a79-80a3-d070e4897ca9" />
+)
 
 ## Read this first (honest caveats)
 
