@@ -1,8 +1,19 @@
 # AML Transaction Monitoring & Case Investigation Agent
 
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-2.12-EE4C2C?logo=pytorch&logoColor=white)
+![PyG](https://img.shields.io/badge/PyG-2.8-3C2179)
+![XGBoost](https://img.shields.io/badge/XGBoost-baseline-1E8CBE)
+![pandas](https://img.shields.io/badge/pandas-3.x-150458?logo=pandas&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-agent-1C3C3C?logo=langchain&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-React-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-UI-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+
 An end-to-end anti-money-laundering prototype: detect suspicious transactions three different ways, group them into investigation cases, let an LLM agent draft a **verified, cited** case summary, and hand the decision to a human analyst.
 
-> **Demo video (2 min):** [FILL: YouTube unlisted link] &nbsp;|&nbsp; **Live demo:** [FILL: Vercel link]
+> **Demo video (2 min):** [Watch on YouTube](https://youtu.be/rLygvxY0cDY) &nbsp;|&nbsp; **Live demo:** [FILL: Vercel link]
 
 ![Alerts](docs/screenshots/alerts.png)
 ![Case](docs/screenshots/case.png)
@@ -17,6 +28,7 @@ An end-to-end anti-money-laundering prototype: detect suspicious transactions th
 5. **The alert score is a within-batch percentile rank, not a calibrated probability.**
 6. **The agent never decides.** It drafts summaries only. Escalating, filing or closing a case is the analyst's action.
 7. Not built yet: typology retrieval (Qdrant), a FastAPI backend, and persistent analyst decisions (they are stored in the browser only).
+8. **NEW - The faithfulness gate can miss small numeric mistakes.** In case AL-0025 the agent wrote "within a 30-day timeframe" although the case window is 38 days (the "30d" is the fan-pattern rule's lookback, not the case duration). It still scored 0.89 faithfulness, above the 0.85 threshold, so it counted as verified. An LLM judge is not a substitute for exact checks on dates and amounts, which is why the analyst reviews every summary.
 
 ## What it does
 
@@ -178,6 +190,7 @@ PyTorch Geometric, XGBoost, pandas, LangGraph, RAGAS, React, Vite, TypeScript, T
 
 ## Roadmap
 
+- **NEW - Deterministic numeric check (Gate 3):** match every date, count and amount in a summary against the case evidence, so errors like the 30 vs 38 day mix-up are caught without relying on the LLM judge.
 - Typology retrieval over internal guidance notes (Qdrant) with a "not found" refusal.
 - FastAPI backend and persistent analyst decisions.
 - Batch the RAGAS calls to speed up re-runs.
