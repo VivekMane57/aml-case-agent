@@ -13,7 +13,7 @@
 
 An end-to-end anti-money-laundering prototype: detect suspicious transactions three different ways, group them into investigation cases, let an LLM agent draft a **verified, cited** case summary, and hand the decision to a human analyst.
 
-> **Demo video (2 min):** [Watch on YouTube](https://youtu.be/rLygvxY0cDY) &nbsp;|&nbsp; **Live demo:** [FILL: Vercel link]
+> **Demo video (2 min):** [Watch on YouTube](https://youtu.be/rLygvxY0cDY) &nbsp;|&nbsp; 
 
 ![Alerts](docs/screenshots/alerts.png)
 ![Case](docs/screenshots/case.png)
